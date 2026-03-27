@@ -2,9 +2,8 @@
 
 RefineAI is an AI-powered writing assistant that transforms messy, informal text into clear, professional communication.
 
----
 
-## What It Does
+### What It Does
 
 - Improves grammar and clarity  
 - Enhances tone and professionalism  
