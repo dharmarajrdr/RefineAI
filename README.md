@@ -11,8 +11,3 @@ RefineAI is an AI-powered writing assistant that transforms messy, informal text
 - Keeps the original meaning intact  
 - Delivers a single, refined output  
 
----
-
-## Demo
-
-![Demo](./frontend/Demo.mov)
