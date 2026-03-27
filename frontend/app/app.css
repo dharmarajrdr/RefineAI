@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  @apply min-h-full m-0;
+}
+
+body {
+  @apply font-sans text-slate-100 antialiased;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(124, 58, 237, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(14, 165, 233, 0.2), transparent 55%),
+    linear-gradient(180deg, #070b15 0%, #0b1221 55%, #080d18 100%);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.refine-shell {
+  @apply min-h-screen px-4 py-8 md:px-8 md:py-10;
+}
+
+.refine-wrap {
+  @apply mx-auto flex w-full max-w-4xl flex-col gap-6;
+}
+
+.refine-header {
+  @apply flex flex-col items-center gap-3 text-center;
+}
+
+.badge-glow {
+  @apply inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-slate-200 backdrop-blur;
+}
+
+.status-dot {
+  @apply inline-block h-2 w-2 rounded-full bg-cyan-300;
+  box-shadow: 0 0 14px rgba(103, 232, 249, 0.9);
+}
+
+.refine-title {
+  @apply text-4xl font-semibold tracking-tight text-white md:text-5xl;
+}
+
+.refine-subtitle {
+  @apply max-w-xl text-sm leading-relaxed text-slate-300 md:text-base;
+}
+
+.refine-card,
+.result-card {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-4 shadow-xl shadow-black/20 backdrop-blur-md md:p-6;
+}
+
+.field-label {
+  @apply mb-3 block text-sm font-medium tracking-wide text-slate-200;
+}
+
+.refine-textarea {
+  @apply w-full resize-y rounded-xl border border-white/10 bg-slate-950/70 px-4 py-3 text-base leading-relaxed text-slate-100 outline-none transition-all duration-200;
+  min-height: 125px;
+}
+
+.refine-textarea::placeholder {
+  @apply text-slate-500;
+}
+
+.refine-textarea:hover {
+  @apply border-white/20;
+}
+
+.refine-textarea:focus {
+  @apply border-cyan-400/70;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+}
+
+.refine-textarea:disabled {
+  @apply cursor-not-allowed opacity-80;
+}
+
+.action-row {
+  @apply mt-4 flex justify-end;
+}
+
+.refine-button {
+  @apply inline-flex min-w-28 items-center justify-center rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all duration-200;
+}
+
+.refine-button:hover:enabled {
+  @apply bg-cyan-300;
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.refine-button:focus-visible {
+  @apply outline-none;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.4);
+}
+
+.refine-button:disabled {
+  @apply cursor-not-allowed bg-cyan-900/40 text-slate-300;
+}
+
+.feedback {
+  @apply mt-3 rounded-lg border px-3 py-2 text-sm;
+}
+
+.feedback-warning {
+  @apply border-amber-300/30 bg-amber-300/10 text-amber-100;
+}
+
+.feedback-error {
+  @apply border-red-300/30 bg-red-400/10 text-red-100;
+}
+
+.loader-panel {
+  @apply flex flex-col items-center gap-4 rounded-xl border border-white/10 bg-slate-950/50 p-5;
+}
+
+.spinner {
+  @apply h-8 w-8 rounded-full border-2 border-cyan-200/30 border-t-cyan-300;
+  animation: spin 0.9s linear infinite;
+}
+
+.skeleton-group {
+  @apply flex w-full flex-col gap-2;
+}
+
+.skeleton-line {
+  @apply block h-3 w-full rounded-full bg-white/10;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-wide {
+  width: 95%;
+}
+
+.skeleton-short {
+  width: 72%;
+}
+
+.result-content {
+  @apply relative rounded-xl border border-white/10 bg-slate-950/50 p-4 pr-24 text-sm leading-7 text-slate-100 md:text-base;
+  animation: fadeIn 250ms ease-out;
+}
+
+.copy-button {
+  @apply absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-200 transition-all duration-200;
+}
+
+.copy-button svg {
+  @apply h-3.5 w-3.5;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.copy-button:hover {
+  @apply border-white/25 bg-white/10 text-white;
+  cursor: pointer;
+}
+
+.copy-button:focus-visible {
+  @apply outline-none;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.35);
+}
+
+.copy-button.is-copied {
+  @apply border-emerald-300/40 bg-emerald-400/15 text-emerald-100;
+}
+
+.result-content p {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.result-empty {
+  @apply rounded-xl border border-dashed border-white/15 bg-slate-950/40 px-4 py-8 text-center text-sm text-slate-400;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
