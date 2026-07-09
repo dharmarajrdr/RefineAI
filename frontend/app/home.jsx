@@ -42,7 +42,7 @@ export default function Home() {
     setRefinedText("");
 
     try {
-      const response = await fetch("http://localhost:8080/api/ollama/response?prompt=" + encodeURIComponent(value), {
+      const response = await fetch("http://localhost:8080/api/groq/response?prompt=" + encodeURIComponent(value), {
         method: "GET"
       });
 
