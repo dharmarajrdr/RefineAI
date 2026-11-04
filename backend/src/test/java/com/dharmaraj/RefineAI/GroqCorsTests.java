@@ -25,9 +25,12 @@ class GroqCorsTests {
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
         mockMvc.perform(options("/api/groq/response")
                         .header("Origin", "http://localhost:5173")
-                                .header("Access-Control-Request-Method", "POST"))
+                        .header("Access-Control-Request-Method", "POST")
+                        .header("Access-Control-Request-Headers", "content-type"))
                 .andExpect(status().isOk())
-                .andExpect(header().string("Access-Control-Allow-Origin", "http://localhost:5173"));
+                .andExpect(header().string("Access-Control-Allow-Origin", "http://localhost:5173"))
+                .andExpect(header().string("Access-Control-Allow-Methods", "POST"))
+                .andExpect(header().string("Access-Control-Allow-Headers", "content-type"));
     }
 
     @Test

@@ -11,6 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/groq/**")
                 .allowedOrigins("http://localhost:3000", "http://localhost:5173")
-                .allowedMethods("POST");
+                .allowedMethods("POST")
+                .allowedHeaders("Content-Type");
     }
 }
