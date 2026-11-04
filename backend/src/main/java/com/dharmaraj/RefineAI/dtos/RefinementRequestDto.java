@@ -4,8 +4,7 @@ public record RefinementRequestDto(
         String prompt,
         Preset preset,
         Tone tone,
-        Length length,
-        String customInstructions) {
+        Length length) {
 
     public enum Preset {
         GENERAL,

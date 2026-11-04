@@ -16,8 +16,7 @@ class AiRuleSetterTests {
                 "hello   there",
                 RefinementRequestDto.Preset.EMAIL,
                 RefinementRequestDto.Tone.FRIENDLY,
-                RefinementRequestDto.Length.SHORTEN,
-                "Keep the greeting warm.");
+                RefinementRequestDto.Length.SHORTEN);
 
         var prompt = AiRuleSetter.createPrompt(request, null);
         String instructions = prompt.getSystemMessage().getText();
@@ -26,14 +25,12 @@ class AiRuleSetterTests {
         assertTrue(instructions.contains("Friendly and approachable"));
         assertTrue(instructions.contains("Make the result more concise"));
         assertFalse(instructions.contains("{input}"));
-        assertEquals(
-                "Text to refine:\nhello   there\n\nAdditional refinement instructions:\nKeep the greeting warm.",
-                prompt.getUserMessage().getText());
+        assertEquals("Text to refine:\nhello   there", prompt.getUserMessage().getText());
     }
 
     @Test
     void defaultsToGeneralProfessionalSameLengthInstructions() {
-        var request = new RefinementRequestDto("Hello", null, null, null, null);
+        var request = new RefinementRequestDto("Hello", null, null, null);
         String instructions = AiRuleSetter.createPrompt(request, null).getSystemMessage().getText();
 
         assertTrue(instructions.contains("General writing"));

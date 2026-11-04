@@ -32,8 +32,7 @@ public final class OllamaAiService {
                 message,
                 RefinementRequestDto.Preset.GENERAL,
                 RefinementRequestDto.Tone.PROFESSIONAL,
-                RefinementRequestDto.Length.SAME_LENGTH,
-                null);
+                RefinementRequestDto.Length.SAME_LENGTH);
         ChatResponse response = chatModel.call(AiRuleSetter.createPrompt(request, getOllamaChatOptions()));
 
         return Objects.requireNonNull(response.getResult()).getOutput().getText();

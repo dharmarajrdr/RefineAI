@@ -13,7 +13,7 @@ public final class AiRuleSetter {
     public static Prompt createPrompt(RefinementRequestDto request, ChatOptions options) {
         return new Prompt(List.of(
                 new SystemMessage(buildInstructions(request)),
-                new UserMessage(buildUserMessage(request))), options);
+                new UserMessage("Text to refine:\n" + request.prompt())), options);
     }
 
     private static String buildInstructions(RefinementRequestDto request) {
@@ -39,15 +39,6 @@ public final class AiRuleSetter {
                 Tone: %s
                 Length: %s
                 """.formatted(presetInstruction(preset), toneInstruction(tone), lengthInstruction(length));
-    }
-
-    private static String buildUserMessage(RefinementRequestDto request) {
-        String message = "Text to refine:\n" + request.prompt();
-        if (request.customInstructions() == null || request.customInstructions().isBlank()) {
-            return message;
-        }
-
-        return message + "\n\nAdditional refinement instructions:\n" + request.customInstructions().trim();
     }
 
     private static String presetInstruction(RefinementRequestDto.Preset preset) {
