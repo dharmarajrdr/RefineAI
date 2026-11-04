@@ -69,24 +69,17 @@ body {
   @apply mb-2 block text-sm font-medium text-slate-200;
 }
 
-.refine-select,
-.refine-input {
+.refine-select {
   @apply w-full rounded-xl border border-white/10 bg-slate-950/70 px-3 py-2.5 text-sm text-slate-100 outline-none transition-all duration-200;
 }
 
-.refine-select:focus,
-.refine-input:focus {
+.refine-select:focus {
   @apply border-cyan-400/70;
   box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
 }
 
-.refine-select:disabled,
-.refine-input:disabled {
+.refine-select:disabled {
   @apply cursor-not-allowed opacity-70;
-}
-
-.custom-instructions-label {
-  @apply mt-4;
 }
 
 .helper-text {

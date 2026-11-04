@@ -23,8 +23,6 @@ export default function RefinementForm({
   setTone,
   length,
   setLength,
-  customInstructions,
-  setCustomInstructions,
   isLoading,
   isHistoryReady,
   errorMessage,
@@ -64,18 +62,6 @@ export default function RefinementForm({
           </select>
         </div>
       </div>
-
-      <label htmlFor="customInstructions" className="control-label custom-instructions-label">
-        Custom instructions <span className="helper-text">(optional)</span>
-      </label>
-      <input
-        id="customInstructions"
-        className="refine-input"
-        value={customInstructions}
-        onChange={(event) => setCustomInstructions(event.target.value)}
-        placeholder="e.g. Keep it warm and direct"
-        disabled={isLoading}
-      />
 
       <textarea
         id="rawText"

@@ -25,7 +25,6 @@ export default function Home() {
   const [preset, setPreset] = useState("GENERAL");
   const [tone, setTone] = useState("PROFESSIONAL");
   const [length, setLength] = useState("SAME_LENGTH");
-  const [customInstructions, setCustomInstructions] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isCopied, setIsCopied] = useState(false);
@@ -54,7 +53,6 @@ export default function Home() {
           preset,
           tone,
           length,
-          customInstructions: customInstructions.trim(),
         }),
       });
       const payload = await response.json().catch(() => ({}));
@@ -144,8 +142,6 @@ export default function Home() {
           setTone={setTone}
           length={length}
           setLength={setLength}
-          customInstructions={customInstructions}
-          setCustomInstructions={setCustomInstructions}
           isLoading={isLoading}
           isHistoryReady={history.isReady}
           errorMessage={errorMessage}
