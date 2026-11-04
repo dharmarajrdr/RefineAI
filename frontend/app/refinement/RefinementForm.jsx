@@ -1,16 +1,12 @@
 const presetDefaults = {
   GENERAL: { tone: "PROFESSIONAL", length: "SAME_LENGTH" },
-  EMAIL: { tone: "PROFESSIONAL", length: "SAME_LENGTH" },
   PROFESSIONAL_MESSAGE: { tone: "PROFESSIONAL", length: "SAME_LENGTH" },
-  RESUME_CONTENT: { tone: "PROFESSIONAL", length: "SHORTEN" },
   ACADEMIC_WRITING: { tone: "PROFESSIONAL", length: "SAME_LENGTH" },
 };
 
 const presets = [
   ["GENERAL", "General refinement"],
-  ["EMAIL", "Email"],
   ["PROFESSIONAL_MESSAGE", "Professional message"],
-  ["RESUME_CONTENT", "Resume content"],
   ["ACADEMIC_WRITING", "Academic writing"],
 ];
 
