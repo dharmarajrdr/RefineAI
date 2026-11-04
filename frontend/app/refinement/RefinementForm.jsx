@@ -59,7 +59,7 @@ export default function RefinementForm({
         <div>
           <label htmlFor="length" className="control-label">Length</label>
           <select id="length" className="refine-select" value={length} onChange={(event) => setLength(event.target.value)} disabled={isLoading}>
-            <option value="SAME_LENGTH">Keep roughly the same length</option>
+            <option value="SAME_LENGTH">Same length</option>
             <option value="SHORTEN">Shorten</option>
           </select>
         </div>
