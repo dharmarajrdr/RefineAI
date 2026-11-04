@@ -49,4 +49,4 @@ The frontend sends refinement requests to `POST /api/groq/response` as JSON:
 }
 ```
 
-The API key is configured on the backend using `GROQ_API_KEY`.
+The API key is configured on the backend using `GROQ_API_KEY`. If Groq rejects the key, the API returns `502 Bad Gateway` with an actionable error; update the key in the backend's environment and restart the backend.
